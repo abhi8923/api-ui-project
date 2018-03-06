@@ -1,0 +1,112 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>home</title>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script type="text/javascript" src="./scripts/jquery-3.3.1.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/animate.css">
+  <script type="text/javascript" src="./scripts/home.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
+</head>
+
+<body>
+  <div class="row" id="nav-bar">
+    <div class="col-md-6 col-sm-6 col-xs-6" id="label-home">
+      Home
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6" id="label-logout">
+      <a href="javascript:logoutUser()">
+      Logout
+      <i class="fas fa-power-off"></i>
+    </a>
+    </div>
+  </div>
+  <div class="row" id="header-home">
+    <div class="col-md-3 col-sm-3 col-xs-1"></div>
+    <div class="col-md-3 col-sm-3 col-xs-12 button-header">
+      <button type="button" class="btn btn-custom-lg waves-effect waves-light" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="false" id="btn-header-common">New Note</button>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-12 button-header">
+      <button type="button" class="btn btn-custom-lg" id="btn-header-common">Edit</button>
+    </div>
+  </div>
+  <div class="container" id="hash-tags-container">
+    <div class="row" id="hash-tags-row">
+      <div class="col-md-2 col-sm-6 col-xs-12 hash-tags-div" id="label-home">
+        <button type="button" class="btn btn-custom-lg hash-tag-button-class" id="hash-tag-btn-all">All</button>
+      </div>
+    </div>
+  </div>
+  <script type="mustache/x-tmpl" id="template-header-title">
+    {{#title}}
+    <div class="col-md-2 col-sm-6 col-xs-12 hash-tags-div" id="label-home">
+      <button type="button" class="btn btn-custom-lg hash-tag-button-class" id="hash-tag-btn"  >{{tag}}</button>
+    </div>
+    {{/title}}
+  </script>
+  <div class="container" id="notes-container">
+    <div class="row" id="notes-row">
+
+
+<script type="mustache/x-tmpl" id="template-header-note">
+  {{#note}}
+    <div class="col-md-4 col-sm-6 col-xs-12" id="notes-card-container">
+      <div class="card"  id="notes-card"> 
+      <img class="card-img-top" src="./images/strips2.jpg" alt="Card image cap" id="img-card">
+      <div class="card-block">
+        <p class="card-text">{{data}}</p>
+      </div>
+    </div>
+</div>
+{{/note}}
+</script>
+
+
+
+
+
+
+
+    
+    
+</div>
+  </div>
+  <!-- Modal -->
+  <div class="modal " id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">New Note</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="usrname">ENTER A TAG</label>
+            <input type="text" class="form-control" id="tag" placeholder="TAG" oninput="hideTagLabel();">
+            <div class="valid-label" id="tag-label">Tag Cannot be empty</div>
+          </div>
+          <div class="form-group">
+            <label for="psw">NOTE</label>
+            <textarea class="form-control" id="psw" placeholder="NOTE" rows="10" oninput="hideNoteLabel();"></textarea>
+            <div class="valid-label" id="data-label">Note Cannot be empty</div>
+          </div>
+          <button type="submit" class="btn btn-success btn-block" id="btn-save-note" onclick="javascript:saveNote()">SAVE</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+

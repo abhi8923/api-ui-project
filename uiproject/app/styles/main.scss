@@ -1,0 +1,125 @@
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #384047; //overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  #form {
+    //max-width: 300px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+
+    #form-heading {
+      margin: 0 0 30px 0;
+      text-align: center;
+    }
+    #fieldset-form {
+      margin-bottom: 30px;
+      border: none;
+
+
+      .form-control {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        font-size: 16px;
+        height: auto;
+        margin: 0;
+        outline: 0;
+        padding: 15px;
+        width: 100%;
+        background-color: #e8eeef;
+        color: #8a97a0;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset; // margin-bottom: 30px;
+        &:focus {
+          color: #495057;
+          background-color: #fff;
+          border-color: #98c2f2;
+          outline: 0;
+          -webkit-box-shadow: 0 0 0 0.2rem rgba(39, 128, 227, 0.25);
+          box-shadow: 0 0 0 0.2rem rgba(39, 128, 227, 0.25);
+        }
+      }
+
+      .valid-label {
+        //display: none;
+        visibility: hidden;
+        width: 100%;
+        margin-top: 0.25rem;
+        font-size: 80%;
+        color: red;
+        text-align: left;
+        margin-bottom: 30px;
+      }
+    }
+    #btn-sign-form {
+      padding: 19px 39px 18px 39px;
+      color: #FFF;
+      background-color: #4bc970;
+      font-size: 18px;
+      text-align: center;
+      font-style: normal;
+      border-radius: 5px;
+      width: 100%;
+      border: 1px solid #3ac162;
+      border-width: 1px 1px 3px;
+      box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+      margin-bottom: 10px;
+    }
+    .valid-label {
+      //display: none;
+      //visibility: hidden;
+      width: 100%;
+      margin-top: 0.25rem;
+      font-size: 80%; //color: red;
+      margin-bottom: 30px;
+      text-align: center;
+      #anchor-label{
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
+
+#complexity {
+  width: 300px;
+  padding: 3px 0;
+  height: 20px;
+  color: #000;
+  font-size: 14px;
+  text-align: center;
+  visibility: hidden;
+}
+
+.default {
+  background-color: #CCC;
+}
+
+.weak {
+  background-color: #FF5353;
+}
+
+.strong {
+  background-color: #FAD054;
+}
+
+.stronger {
+  background-color: #93C9F4;
+}
+
+.strongest {
+  background-color: #B6FF6C;
+}
